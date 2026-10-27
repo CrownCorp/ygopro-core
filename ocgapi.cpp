@@ -119,7 +119,7 @@ OCGCORE_API void start_duel(intptr_t pduel, uint32_t options) {
 			pcard->current.position = POS_FACEDOWN;
 		}
 	}
-	pd->game_field->add_process(PROCESSOR_TURN, 0, 0, 0, 0, 0);
+	pd->game_field->add_process(PROCESSOR_TURN, 0, 0, 0, (options & DUEL_PLAYER1_FIRST) ? 1 : 0, 0);
 }
 OCGCORE_API void end_duel(intptr_t pduel) {
 	duel* pd = (duel*)pduel;
